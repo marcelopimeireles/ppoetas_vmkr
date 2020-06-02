@@ -14,11 +14,11 @@ const nlu = new NaturalLanguageUnderstandingV1({
   url: 'https://api.eu-gb.natural-language-understanding.watson.cloud.ibm.com/instances/1b1bc37e-6d73-4dae-b459-206e176b9ec0'
 })
 
-// const state = require('./state.js')
+const state = require('./state.js')
 
 async function robot(content) {
   console.log('> [text-robot] Starting...')
-  // const content = state.load()
+  content= state.load()
 
   await fetchContentFromWikipedia(content)
   sanitizeContent(content)
@@ -26,7 +26,7 @@ async function robot(content) {
   limitMaximumSentences(content)
   await fetchKeywordsOfAllSentences(content)
 
-  // state.save(content)
+  state.save(content)
 
   async function fetchContentFromWikipedia(content) {
     console.log('> [text-robot] Fetching content from Wikipedia')
