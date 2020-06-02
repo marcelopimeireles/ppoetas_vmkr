@@ -1,15 +1,21 @@
 const gm = require('gm').subClass({imageMagick: true})
 const state = require('./state.js')
-
+const spawn = require('child_process').spawn
 const path = require('path')
+const os = require('os');
+const rootPath = path.resolve(__dirname, '..')
+
+const fromRoot = relPath => path.resolve(rootPath, relPath)
 
 async function robot() {
   console.log('> [video-robot] Starting...')
   const content = state.load()
 
-  await convertAllImages(content)
-  await createAllSentenceImages(content)
+  // await convertAllImages(content)
+  // await createAllSentenceImages(content)
   await createYouTubeThumbnail()
+  await createAfterEffectsScript(content)
+  await renderVideoWithAfterEffects()
 
   state.save(content)
 
@@ -130,6 +136,44 @@ async function robot() {
           console.log('> [video-robot] YouTube thumbnail created')
           resolve()
         })
+    })
+  }
+
+  async function createAfterEffectsScript(content) {
+    await state.saveScript(content)
+  }
+
+  async function renderVideoWithAfterEffects() {
+    return new Promise((resolve, reject) => {
+      const systemPlatform = os.platform()
+      let aerenderFilePath
+      if (systemPlatform == 'darwin'){
+        aerenderFilePath = '/Applications/Adobe After Effects 2020/aerender'
+      }else if (systemPlatform =='win32'){
+        aerenderFilePath = '%programfiles%\Adobe\Adobe After Effects CC\Arquivos de suporte\aerender.exe'
+      }else{
+        return reject(new Error('System not Supported'))
+      }
+      
+      const templateFilePath = fromRoot('./templates/1/template.aep')
+      const destinationFilePath = fromRoot('./content/output.mov')
+
+      console.log('> [video-robot] Starting After Effects')
+
+      const aerender = spawn(aerenderFilePath, [
+        '-comp', 'main',
+        '-project', templateFilePath,
+        '-output', destinationFilePath
+      ])
+
+      aerender.stdout.on('data', (data) => {
+        process.stdout.write(data)
+      })
+
+      aerender.on('close', () => {
+        console.log('> [video-robot] After Effects closed')
+        resolve()
+      }, (error) => { console.log(error)})
     })
   }
 
