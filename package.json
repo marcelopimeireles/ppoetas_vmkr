@@ -1,0 +1,22 @@
+{
+  "name": "gadolhadorot",
+  "version": "1.0.0",
+  "description": "video factory",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelopimeireles/gadolhadorot.git"
+  },
+  "author": "Marcelo Meireles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcelopimeireles/gadolhadorot/issues"
+  },
+  "homepage": "https://github.com/marcelopimeireles/gadolhadorot#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
