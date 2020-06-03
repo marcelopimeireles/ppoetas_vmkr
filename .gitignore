@@ -108,3 +108,10 @@ credentials/*.json
 
 # content
 content.json
+content/*
+templates/*
+
+.DS_*
+
+.gitignore
+*-lock.json
