@@ -1,2 +1,63 @@
-# Gadol haDorot
-Stack of robots for producing a series of videos about the greatest Rabbis of each generation.
+# Parque dos Poetas Video Maker
+Stack of robots for producing a series of videos about the 60 greatest Portuguese Poets of all times.
+
+- D. Diniz
+- João Roiz de Castel-Branco
+- Gil Vicente
+- Garcia de Resende
+- Bernardim Ribeiro
+- Sá de Miranda
+- Cristóvão Falcão
+- Diogo Bernardes
+- Luís de Camões
+- António Ferreira
+- Francisco Rodrigues Lobo
+- Soror Violante do Céu
+- Frei Jerónimo Baía
+- Correia Garção
+- Filinto Elísio
+- Nicolau Tolentino
+- José Anastácio da Cunha
+- Marquesa de Alorna
+- Manuel Maria Barbosa du Bocage
+- Almeida Garrett
+- António Feliciano de Castilho
+- Alexandre Herculano
+- Soares dos Passos
+- João de Deus
+- Antero de Quental
+- Gomes Leal
+- Guerra Junqueiro
+- António Feijó
+- Cesário Verde
+- António Nobre
+- Carlos Drummond de Andrade
+- Manuel Bandeira
+- José Craveirinha
+- Alda Lara
+- Vasco Cabral
+- Jorge Barbosa
+- José dos Santos Ferreira ou Adé
+- Fernando Sylvan
+- Alda do Espírito Santo
+- Adeodato Barreto
+- Camilo Pessanha
+- Teixeira de Pascoaes
+- Mário de Sá Carneiro
+- Florbela Espanca
+- José Gomes Ferreira
+- José Régio
+- Vitorino Nemésio
+- Miguel Torga
+- Jorge de Sena
+- Sophia de Mello Breyner Andersen
+- Carlos de Oliveira
+- Natália Correia
+- Eugénio de Andrade
+- Manuel Alegre
+- Fernando Pessoa
+- Alexandre O’Neill
+- António Ramos Rosa
+- David Mourão Ferreira
+- António Gedeão
+- Ruy Belo
